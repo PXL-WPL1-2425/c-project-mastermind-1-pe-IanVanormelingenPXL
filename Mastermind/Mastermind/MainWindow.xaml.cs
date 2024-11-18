@@ -26,6 +26,7 @@ namespace Mastermind
     {
         private List<string> colors = new List<string> { "Rood", "Geel", "Oranje", "Wit", "Groen", "Blauw" };
         private List<string> Geheime_code = new List<string>();
+        //De timer start en gaat van 10 naar 0.
         private DispatcherTimer timer = new DispatcherTimer();
 
         public MainWindow()
@@ -129,31 +130,43 @@ namespace Mastermind
             
 
         }
-        private void Total_attempts(object sender, EventArgs e)
+
+        private void Total_atempts(object sender, EventArgs e)
         {
             if (Button_Click)
             {
-                Total_attemps + 1;
+                Total_atempts + 1;
             }
                 
 
         }
-
+        /// Toggledebug
+        /// De Debug gaat open als je Ctrl+F12 indrukt.
+        /// De debug laat de code zien als je de button indrukt
         private void toggledebug(object sender, EventArgs e)
         {
-            if (CTRL - F12 Pressed)
+            if (KeyBinding ctrl + F12)
             {
-                Show Debug;
+                Show.Debug;
 
             }
 
+            if (Button_Click)
+            {
+                GetHashCode;
+            }
+
+
+
         }
+        //Als de timer op 0 gaat wordt er een punt naar total atempts gegaan en wordt de timer reset.
         private void Timer_Tick(object sender, EventArgs e)
         {
             CountdownTimer.Enabled = true;
             if (timer = 0)
             {
-                Total_attemps(+1);
+                Total_atempts(+ 1);
+                Reset.Timer;
             }
         }
 
