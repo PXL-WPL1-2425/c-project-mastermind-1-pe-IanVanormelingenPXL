@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Mastermind
 {
@@ -24,11 +26,14 @@ namespace Mastermind
     {
         private List<string> colors = new List<string> { "Rood", "Geel", "Oranje", "Wit", "Groen", "Blauw" };
         private List<string> Geheime_code = new List<string>();
+        private DispatcherTimer timer = new DispatcherTimer();
+
         public MainWindow()
         {
             InitializeComponent();
             GenerateGeheime_code();
             FillComboBoxes();
+            timer.Start();
         }
         private void GenerateGeheime_code()
         {
@@ -143,6 +148,12 @@ namespace Mastermind
             }
 
         }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            CountdownTimer.Enabled = true;
+        }
+
+
 
     }
 }
