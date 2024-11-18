@@ -151,6 +151,10 @@ namespace Mastermind
         private void Timer_Tick(object sender, EventArgs e)
         {
             CountdownTimer.Enabled = true;
+            if (timer = 0)
+            {
+                Total_attemps(+1);
+            }
         }
 
 
