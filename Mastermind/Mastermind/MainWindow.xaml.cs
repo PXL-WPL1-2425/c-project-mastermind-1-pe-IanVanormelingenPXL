@@ -133,6 +133,16 @@ namespace Mastermind
                 
 
         }
-        
+
+        private void toggledebug(object sender, EventArgs e)
+        {
+            if (CTRL - F12 Pressed)
+            {
+                Show Debug;
+
+            }
+
+        }
+
     }
 }
